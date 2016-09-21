@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,11 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.GET)
     public Page<Product> index(Pageable pageable) {
         return productService.findAll(pageable);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Product show(@PathVariable Long id) {
+        return productService.findOneById(id);
     }
 
     @RequestMapping(method = RequestMethod.POST)

@@ -9,5 +9,7 @@ public interface ProductService {
 
     Page<Product> findAll(Pageable pageable);
 
+    Product findOneById(Long id);
+
     Product save(Product product);
 }
