@@ -8,4 +8,6 @@ import br.com.atech.entity.Product;
 public interface ProductService {
 
     Page<Product> findAll(Pageable pageable);
+
+    Product save(Product product);
 }
