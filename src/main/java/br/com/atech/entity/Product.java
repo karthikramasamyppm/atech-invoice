@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "products")
@@ -14,7 +15,11 @@ public class Product {
     @Id
     @GeneratedValue
     private Long id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private BigDecimal price;
 
     public Product() {
