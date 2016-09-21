@@ -1,23 +1,28 @@
 package br.com.atech.entity.controller;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.atech.entity.Product;
+import br.com.atech.service.ProductService;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
-    @RequestMapping("/products")
-    public List<Product> index() {
+    private final ProductService productService;
 
-        Product p1 = new Product(1L, "iPhone", new BigDecimal("2359.00"));
-        Product p2 = new Product(2L, "iPad", new BigDecimal("2400.00"));
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
-        return Arrays.asList(p1, p2);
+    @RequestMapping(method = { RequestMethod.GET })
+    public Page<Product> index(Pageable pageable) {
+        return productService.findAll(pageable);
     }
 }
