@@ -1,18 +1,35 @@
 package br.com.atech.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name = "invoice_items")
 public class InvoiceItem {
+
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @JsonIgnore
+    @ManyToOne(targetEntity = Invoice.class)
     private Invoice invoice;
+
+    @OneToOne(fetch = FetchType.EAGER)
     private Product product;
     private Integer quantity;
 
     public InvoiceItem() {
-        super();
     }
 
-    public InvoiceItem(Long id, Invoice invoice, Product product, Integer quantity) {
-        super();
-        this.id = id;
+    public InvoiceItem(Invoice invoice, Product product, Integer quantity) {
         this.invoice = invoice;
         this.product = product;
         this.quantity = quantity;
@@ -22,31 +39,39 @@ public class InvoiceItem {
         return id;
     }
 
-    public void setId(Long id) {
+    public InvoiceItem setId(Long id) {
         this.id = id;
+
+        return this;
     }
 
     public Invoice getInvoice() {
         return invoice;
     }
 
-    public void setInvoice(Invoice invoice) {
+    public InvoiceItem setInvoice(Invoice invoice) {
         this.invoice = invoice;
+
+        return this;
     }
 
     public Product getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public InvoiceItem setProduct(Product product) {
         this.product = product;
+
+        return this;
     }
 
     public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public InvoiceItem setQuantity(Integer quantity) {
         this.quantity = quantity;
+
+        return this;
     }
 }

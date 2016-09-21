@@ -2,18 +2,25 @@ package br.com.atech.entity;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "products")
 public class Product {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private BigDecimal price;
 
     public Product() {
-        super();
     }
 
-    public Product(Long id, String name, BigDecimal price) {
-        super();
-        this.id = id;
+    public Product(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
     }
@@ -22,23 +29,29 @@ public class Product {
         return id;
     }
 
-    public void setId(Long id) {
+    public Product setId(Long id) {
         this.id = id;
+
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Product setName(String name) {
         this.name = name;
+
+        return this;
     }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public Product setPrice(BigDecimal price) {
         this.price = price;
+
+        return this;
     }
 }
