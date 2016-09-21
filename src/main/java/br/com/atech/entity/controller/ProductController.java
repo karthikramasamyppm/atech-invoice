@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.atech.entity.Product;
+import br.com.atech.exception.ResourceNotFoundException;
 import br.com.atech.service.ProductService;
 
 @RestController
@@ -38,5 +39,19 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.POST)
     public Product create(@RequestBody @Valid final Product product) {
         return productService.save(product);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Product update(@PathVariable Long id, @RequestBody @Valid final Product newProduct) {
+
+        Product product = productService.findOneById(id);
+
+        if (null == product) {
+            throw new ResourceNotFoundException("Product not found");
+        }
+
+        newProduct.setId(id);
+
+        return productService.save(newProduct);
     }
 }
