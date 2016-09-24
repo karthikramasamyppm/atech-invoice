@@ -10,6 +10,8 @@ public interface InvoiceService {
 
     Page<Invoice> findAllByInvoiceSearchFilter(InvoiceSearchFilter filter, Pageable pageable);
 
+    Invoice findOneById(Long id);
+
     Invoice save(Invoice invoice);
 
     void saveAsync(Invoice invoice);

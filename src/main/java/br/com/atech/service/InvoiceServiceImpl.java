@@ -45,6 +45,11 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
+    public Invoice findOneById(Long id) {
+        return repository.findOne(id);
+    }
+
+    @Override
     public Invoice save(Invoice invoice) {
         return repository.save(invoice);
     }
