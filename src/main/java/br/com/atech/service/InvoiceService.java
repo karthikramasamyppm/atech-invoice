@@ -9,4 +9,8 @@ import br.com.atech.repository.filter.InvoiceSearchFilter;
 public interface InvoiceService {
 
     Page<Invoice> findAllByInvoiceSearchFilter(InvoiceSearchFilter filter, Pageable pageable);
+
+    Invoice save(Invoice invoice);
+
+    void saveAsync(Invoice invoice);
 }
