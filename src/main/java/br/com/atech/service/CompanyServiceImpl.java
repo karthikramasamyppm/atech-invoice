@@ -14,15 +14,20 @@ import br.com.atech.repository.CompanyRepository;
 @Transactional
 public class CompanyServiceImpl implements CompanyService {
 
-    private final CompanyRepository companyRepository;
+    private final CompanyRepository repository;
 
     @Autowired
-    public CompanyServiceImpl(CompanyRepository companyRepository) {
-        this.companyRepository = companyRepository;
+    public CompanyServiceImpl(CompanyRepository repository) {
+        this.repository = repository;
     }
 
     @Override
     public Page<Company> findAll(Pageable pageable) {
-        return companyRepository.findAll(pageable);
+        return repository.findAll(pageable);
+    }
+
+    @Override
+    public Company findOneById(Long id) {
+        return repository.findOne(id);
     }
 }
