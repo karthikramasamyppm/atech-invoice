@@ -35,7 +35,13 @@ public class ProductController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Product show(@PathVariable Long id) {
-        return productService.findOneById(id);
+        Product product = productService.findOneById(id);
+
+        if (null == product) {
+            throw new ResourceNotFoundException("Product not found");
+        }
+
+        return product;
     }
 
     @RequestMapping(method = RequestMethod.POST)
