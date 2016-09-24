@@ -19,7 +19,7 @@ import br.com.atech.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
+public class ProductController extends ApiController {
 
     private final ProductService productService;
 

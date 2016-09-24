@@ -12,7 +12,7 @@ import br.com.atech.service.CompanyService;
 
 @RestController
 @RequestMapping("/companies")
-public class CompanyController {
+public class CompanyController extends ApiController {
 
     private final CompanyService companyService;
 
@@ -21,7 +21,7 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @RequestMapping(method = { RequestMethod.GET })
+    @RequestMapping(method = RequestMethod.GET)
     public Page<Company> index(Pageable pageable) {
         return companyService.findAll(pageable);
     }

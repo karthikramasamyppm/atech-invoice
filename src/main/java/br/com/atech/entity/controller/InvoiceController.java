@@ -21,7 +21,7 @@ import br.com.atech.service.InvoiceService;
 
 @RestController
 @RequestMapping("/invoices")
-public class InvoiceController {
+public class InvoiceController extends ApiController {
 
     private final InvoiceService invoiceService;
 
