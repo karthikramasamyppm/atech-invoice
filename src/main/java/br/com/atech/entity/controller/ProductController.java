@@ -5,12 +5,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.atech.entity.ApiResponse;
 import br.com.atech.entity.Product;
 import br.com.atech.exception.ResourceNotFoundException;
 import br.com.atech.service.ProductService;
@@ -37,8 +39,10 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Product create(@RequestBody @Valid final Product product) {
-        return productService.save(product);
+    public ApiResponse create(@RequestBody @Valid final Product product) {
+        productService.saveAsync(product);
+
+        return new ApiResponse(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
