@@ -30,4 +30,9 @@ public class CompanyServiceImpl implements CompanyService {
     public Company findOneById(Long id) {
         return repository.findOne(id);
     }
+
+    @Override
+    public Company save(Company company) {
+        return repository.save(company);
+    }
 }

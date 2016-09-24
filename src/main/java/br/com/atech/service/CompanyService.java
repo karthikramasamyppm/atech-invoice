@@ -10,4 +10,6 @@ public interface CompanyService {
     Page<Company> findAll(Pageable pageable);
 
     Company findOneById(Long id);
+
+    Company save(Company company);
 }

@@ -1,9 +1,12 @@
 package br.com.atech.entity.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,5 +40,10 @@ public class CompanyController extends ApiController {
         }
 
         return company;
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Company create(@RequestBody @Valid final Company company) {
+        return companyService.save(company);
     }
 }
