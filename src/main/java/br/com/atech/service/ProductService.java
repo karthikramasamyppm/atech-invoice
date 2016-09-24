@@ -12,4 +12,6 @@ public interface ProductService {
     Product findOneById(Long id);
 
     Product save(Product product);
+
+    void saveAsync(Product product);
 }
