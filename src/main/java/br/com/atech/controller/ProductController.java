@@ -1,4 +1,4 @@
-package br.com.atech.entity.controller;
+package br.com.atech.controller;
 
 import javax.validation.Valid;
 
