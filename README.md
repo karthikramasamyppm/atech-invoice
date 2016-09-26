@@ -1,6 +1,7 @@
-# Invoice REST
+# Invoice - API e Frontend
 
-API REST para gerenciar mercadorias e notas fiscais.
+Sistema para gerenciar mercadorias e notas fiscais.
+Backend desenvolvido em Java e Frontend desenvolvido em AngularJS.
 
 ## Documentação
 
@@ -9,20 +10,26 @@ A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJ
 ## Tecnologias e Requisitos
 
 - Java 1.8
+- AngularJS
 - Spring Boot 1.4
 - Maven 3.3.9
 - JPA
 - HSQLDB
+- JMS
 - ActiveMQ
 - JUnit
+
+## Suíte de testes
+
+    $ mvn test
 
 ## Instalação
 
     $ mvn spring-boot:run
 
-## Suíte de testes
+## Demo (Frontend)
 
-    $ mvn test
+- [http://localhost:8080/index.html](http://localhost:8080/index.html)
 
 ## API
 
