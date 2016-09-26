@@ -52,8 +52,10 @@ public class DataHelper {
         // Invoices
         Invoice invoiceApple = InvoiceData.createInvoiceForAppleWithTwoProducts();
         Invoice invoiceMotorola = InvoiceData.createInvoiceForMotorolaWithOneProductAndTwoUnits();
+        Invoice invoiceSamsung = InvoiceData.createInvoiceForSamsungWithOneProduct();
 
         invoiceRepository.save(invoiceApple);
         invoiceRepository.save(invoiceMotorola);
+        invoiceRepository.save(invoiceSamsung);
     }
 }

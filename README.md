@@ -14,6 +14,7 @@ As telas (frontend) podem ser visualizadas em:
 - [ScreenShot-3.png](docs/ScreenShot-3.png)
 - [ScreenShot-4.png](docs/ScreenShot-4.png)
 - [ScreenShot-5.png](docs/ScreenShot-5.png)
+- [ScreenShot-5.png](docs/ScreenShot-6.png)
 
 ## Tecnologias e Requisitos
 
