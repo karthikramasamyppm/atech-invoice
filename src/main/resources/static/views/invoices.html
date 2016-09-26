@@ -1,0 +1,32 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<h1 class="page-header">Notas Fiscais</h1>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Empresa</th>
+					<th>Cliente</th>
+					<th>Descrição</th>
+					<th>Preço</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="invoice in invoices">
+					<td>{{invoice.id}}</td>
+					<td>{{invoice.company.name}}</td>
+					<td>{{invoice.customer}}</td>
+					<td>{{invoice.description}}</td>
+					<td>{{invoice.totalPrice | currency:"R$ "}}</td>
+					<td>
+						<a href="#/invoices/{{invoice.id}}">
+							<button type="button" class="btn btn-primary btn-xs">Detalhes</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

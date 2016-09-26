@@ -1,0 +1,51 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<h1 class="page-header">Nota Fiscal #{{invoice.id}}</h1>
+
+	<div class="row">
+		<div class="col-md-2">Id</div>
+		<div class="col-md-10">{{invoice.id}}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">Empresa:</div>
+		<div class="col-md-10">{{invoice.company.name}}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">Cliente:</div>
+		<div class="col-md-10">{{invoice.customer}}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">Descrição da Nota:</div>
+		<div class="col-md-10">{{invoice.description}}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2">Preço:</div>
+		<div class="col-md-10">{{invoice.totalPrice | currency:"R$ "}}</div>
+	</div>
+
+	<h2 class="sub-header">Items</h2>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Quantidade</th>
+					<th>Preço Unitário</th>
+					<th>Preço Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in invoice.items">
+					<td>{{item.product.name}}</td>
+					<td>{{item.quantity}}</td>
+					<td>{{item.product.price | currency:"R$ "}}</td>
+					<td>{{item.totalPrice | currency:"R$ "}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
