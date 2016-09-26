@@ -30,7 +30,7 @@ A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJ
 
 **Exemplo de requisição:**
 
-- **GET** [http://localhost:8080/products](http://localhost:8080/products)
+- **GET** [http://localhost:8080/api/products](http://localhost:8080/api/products)
 - **Accept:** application/json
 - **Content-Type:** application/json
 
@@ -77,7 +77,7 @@ A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJ
 
 **Exemplo de requisição:**
 
-- **GET** [http://localhost:8080/products/{id}](http://localhost:8080/products/{id})
+- **GET** [http://localhost:8080/api/products/{id}](http://localhost:8080/api/products/{id})
 - **Accept:** application/json
 - **Content-Type:** application/json
 
@@ -97,7 +97,7 @@ A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJ
 
 **Exemplo de requisição:**
 
-- **GET** [http://localhost:8080/invoices](http://localhost:8080/invoices)
+- **GET** [http://localhost:8080/api/invoices](http://localhost:8080/api/invoices)
 - **Accept:** application/json
 - **Content-Type:** application/json
 
@@ -178,7 +178,7 @@ A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJ
 
 **Exemplo de requisição:**
 
-- **GET** [http://localhost:8080/invoices/{id}](http://localhost:8080/invoices/{id})
+- **GET** [http://localhost:8080/api/invoices/{id}](http://localhost:8080/api/invoices/{id})
 - **Accept:** application/json
 - **Content-Type:** application/json
 

@@ -18,7 +18,7 @@ import br.com.atech.exception.ResourceNotFoundException;
 import br.com.atech.service.ProductService;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductController extends ApiController {
 
     private final ProductService productService;

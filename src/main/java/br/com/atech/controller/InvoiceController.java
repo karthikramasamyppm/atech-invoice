@@ -20,7 +20,7 @@ import br.com.atech.repository.filter.InvoiceSearchFilter;
 import br.com.atech.service.InvoiceService;
 
 @RestController
-@RequestMapping("/invoices")
+@RequestMapping("/api/invoices")
 public class InvoiceController extends ApiController {
 
     private final InvoiceService invoiceService;

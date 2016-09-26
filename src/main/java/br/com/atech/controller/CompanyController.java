@@ -16,7 +16,7 @@ import br.com.atech.exception.ResourceNotFoundException;
 import br.com.atech.service.CompanyService;
 
 @RestController
-@RequestMapping("/companies")
+@RequestMapping("/api/companies")
 public class CompanyController extends ApiController {
 
     private final CompanyService companyService;
