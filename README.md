@@ -7,6 +7,14 @@ Backend desenvolvido em Java e Frontend desenvolvido em AngularJS.
 
 A documentação do desafio pode ser encontrada em [DevJavaSenior.pdf](docs/DevJavaSenior.pdf).
 
+As telas (frontend) podem ser visualizadas em:
+
+- [ScreenShot-1.png](docs/ScreenShot-1.png)
+- [ScreenShot-2.png](docs/ScreenShot-2.png)
+- [ScreenShot-3.png](docs/ScreenShot-3.png)
+- [ScreenShot-4.png](docs/ScreenShot-4.png)
+- [ScreenShot-5.png](docs/ScreenShot-5.png)
+
 ## Tecnologias e Requisitos
 
 - Java 1.8
