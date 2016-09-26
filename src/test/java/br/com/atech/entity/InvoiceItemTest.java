@@ -2,6 +2,8 @@ package br.com.atech.entity;
 
 import static org.junit.Assert.assertEquals;
 
+import java.math.BigDecimal;
+
 import org.junit.Test;
 
 import br.com.atech.data.fixture.ProductData;
@@ -18,5 +20,6 @@ public class InvoiceItemTest {
         assertEquals(invoice, item.getInvoice());
         assertEquals(product, item.getProduct());
         assertEquals(1, item.getQuantity(), 0.1);
+        assertEquals(BigDecimal.valueOf(2799), item.getTotalPrice());
     }
 }

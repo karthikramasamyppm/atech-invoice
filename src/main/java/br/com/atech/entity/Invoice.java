@@ -1,5 +1,6 @@
 package br.com.atech.entity;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "invoices")
@@ -106,5 +108,16 @@ public class Invoice {
         addItem(item);
 
         return this;
+    }
+
+    @Transient
+    public BigDecimal getTotalPrice() {
+        BigDecimal total = BigDecimal.ZERO;
+
+        for (InvoiceItem item : items) {
+            total = total.add(item.getTotalPrice());
+        }
+
+        return total;
     }
 }
