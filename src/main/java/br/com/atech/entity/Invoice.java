@@ -99,4 +99,12 @@ public class Invoice {
 
         return this;
     }
+
+    public Invoice addItem(Product product, Integer quantity) {
+        InvoiceItem item = new InvoiceItem(this, product, quantity);
+
+        addItem(item);
+
+        return this;
+    }
 }

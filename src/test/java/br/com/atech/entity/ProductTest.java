@@ -6,18 +6,16 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
+import br.com.atech.data.fixture.ProductData;
+
 public class ProductTest {
 
     @Test
     public void testShouldCreateProductAndReturnWithIdAndNameAndPrice() {
-        Long id = 1L;
-        String name = "iPhone 6S 16GB";
-        BigDecimal price = new BigDecimal(2799.00);
+        Product product = ProductData.createProductIphone6s();
 
-        Product product = new Product(id, name, price);
-
-        assertEquals(id, product.getId(), 0.1);
-        assertEquals(name, product.getName());
-        assertEquals(price, product.getPrice());
+        assertEquals(1L, product.getId(), 0.1);
+        assertEquals("iPhone 6S 16GB", product.getName());
+        assertEquals(new BigDecimal(2799.00), product.getPrice());
     }
 }

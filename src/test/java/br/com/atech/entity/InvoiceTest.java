@@ -2,16 +2,17 @@ package br.com.atech.entity;
 
 import static org.junit.Assert.assertEquals;
 
-import java.math.BigDecimal;
-
 import org.junit.Test;
+
+import br.com.atech.data.fixture.CompanyData;
+import br.com.atech.data.fixture.ProductData;
 
 public class InvoiceTest {
 
     @Test
     public void testShouldCreateInvoice() {
-        Company company = new Company(1L, "Apple");
-        Product product = new Product(1L, "iPhone 6S 16GB", new BigDecimal(2799.00));
+        Company company = CompanyData.createCompanyApple();
+        Product product = ProductData.createProductIphone6s();
         String customer = "John Doe";
         String description = "Invoice description";
 
